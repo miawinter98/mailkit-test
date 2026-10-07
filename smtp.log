@@ -1,0 +1,36 @@
+Connected to smtp://127.0.0.1:2525/?starttls=when-available
+S: 220 mailhog.example ESMTP MailHog
+C: EHLO Mia3Go
+S: 250-Hello Mia3Go
+S: 250-PIPELINING
+S: 250 AUTH PLAIN
+C: MAIL FROM:<server@example.invalid>
+C: RCPT TO:<user@example.invalid>
+S: 250 Sender server@example.invalid ok
+S: 250 Recipient user@example.invalid ok
+C: DATA
+S: 354 End data with <CR><LF>.<CR><LF>
+C: From: Example Server <server@example.invalid>
+C: Date: Wed, 07 Oct 2026 13:16:34 +0200
+C: Subject: Test Subject
+C: Message-Id: <NT8A2HV6IUU4.A5TELKGVRL3V2@mia3go>
+C: To: some user <user@example.invalid>
+C: List-Unsubscribe:
+C:  <https://example.invalid/unsubscribe?email=user%40example.invalid&token=sometoken>
+C: List-Unsubscribe-Post: List-Unsubscribe=One-Click
+C: MIME-Version: 1.0
+C: Content-Type: multipart/alternative; boundary="=-50zqTCDIKduJysy1xoUDgQ=="
+C: 
+C: --=-50zqTCDIKduJysy1xoUDgQ==
+C: Content-Type: text/plain; charset=utf-8
+C: 
+C: Test Message
+C: --=-50zqTCDIKduJysy1xoUDgQ==
+C: Content-Type: text/html; charset=utf-8
+C: 
+C: <p><em>Test Message</em></p>
+C: --=-50zqTCDIKduJysy1xoUDgQ==--
+C: .
+S: 250 Ok: queued as O6buVy851uIBu1YDtVwWRb6w7w-LPr2-tOiJQG2s_38=@mailhog.example
+C: QUIT
+S: 221 Bye
